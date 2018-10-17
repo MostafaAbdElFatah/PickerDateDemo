@@ -22,15 +22,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func DisplayDay(sender: UIButton) {
+    @IBAction func DisplayDay(_ sender: UIButton) {
         let chosenDate = self.datePicker.date
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "EEEE"
-        let day = formatter.stringFromDate(chosenDate)
+        let day = formatter.string(from: chosenDate)
         let result = "The Day is \(day)"
-        let myAlter = UIAlertController(title: result, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-        myAlter.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(myAlter , animated: true, completion: nil)
+        let myAlter = UIAlertController(title: result, message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        myAlter.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(myAlter , animated: true)
     }
 
 }
